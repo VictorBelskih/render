@@ -1,0 +1,18 @@
+{% extends 'AgroChemical/layout.html' %}
+{% block title %} Анализ воды {% endblock %}
+{% load static %}
+{% block content %}
+
+            <div class="row gx-4 gx-lg-5">
+                <div class="container px-4 px-lg-5 about">
+                    {% for art in article %}
+
+                                <center><h1>{{ art.title }}</h1></center>
+                                <p>{{ art.text|safe}}</p>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+{% endblock %}

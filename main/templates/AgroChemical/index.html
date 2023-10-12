@@ -1,0 +1,181 @@
+{% extends 'AgroChemical/layout.html' %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+
+                <div class="col-lg-12">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                      <div class="carousel-inner">
+
+                      {% for sld in slide %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                          <img src="{{ sld.img.url }}" class="d-block w-100 courusel-img" alt="...">
+                          <div class="carousel-caption d-none d-md-block" style="background:#333; opacity:0.8;">
+                            <h5>{{ sld.title }}</h5>
+                            <p>{{ sld.text|safe}}</p>
+                          </div>
+                        </div>
+                      {% endfor %}
+
+                      </div>
+
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="col-lg-5 mt-5">
+                    <h1 class="font-weight-light">ФГБУ ГСАС "Хакасская"</h1>
+                    <p>Станция агрохимической службы «Хакасская» является структурным подразделением
+                        департамента растениеводства, механизации, химизации и защиты растений Минсельхоза России,
+                        и на протяжении 53 лет осуществляет ежегодное агроэкологическое обследование и мониторинг
+                        плодородия почв на площади 130 тыс. га.
+
+                        В зону обследования входит 8 административных районов Республики Хакасия
+                        с общей площадью сельскохозяйственных угодий 1 506 607 га,
+                        в том числе 558 373 га пашни.
+
+                        Работа учреждения является базовой для информационного обеспечения деятельности
+                        органов государственной власти и органов местного самоуправления...
+
+                        </p>
+                    <a class="btn btn-primary" href="{% url 'about' %}">Подробнее О нас</a>
+                </div>
+            </div>
+
+
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body">
+                    <h1>Новости</h1>
+                </div>
+            </div>
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+        {% for item in news %}
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ item.news_title }}</h2>
+                        <img src="{{ item.news_img.url }}" class="d-block w-100 card-img" alt="{{ item.news_title }}">
+                        <p class="card-text">{{ item.news_text }}</p>
+                        <p class="card-text">Опубликовано: {{ item.news_date }}</p> <!-- Добавлено поле дата публикации -->
+                    </div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body">
+                    <h1>Мы на карте</h1>
+                </div>
+            </div>
+        <div id="map" class="map"></div>
+
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+                <form method="post" class="contact100-form validate-form">
+                    {% csrf_token %}
+                    <span class="contact100-form-title">
+                        Cвяжитесь с нами
+                    </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+                        {{form.name}}
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Please enter email: e@a.x">
+                        {{form.email}}
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Please enter your message">
+                        {{form.message}}
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="container-contact100-form-btn">
+                        <button type="submit" class="contact100-form-btn">
+                            Send Email
+                        </button>
+                    </div>
+                </form>
+
+                <div class="contact100-more">
+                    Contact our 24/7 call center: <span class="contact100-more-highlight">+001 345 6889</span>
+                </div>
+            </div>
+        </div>
+
+<script>
+
+
+        var map = L.map('map').setView([53.7214562,91.4612220], 13);
+        var marker = L.marker([53.7215862,91.4612620]).addTo(map);
+        var popup = L.popup()
+            .setLatLng([53.7215862,91.4612620])
+            .setContent("Мы находимся здесь!<br><b>Ул. Хакасская,25</b>")
+            .openOn(map);
+
+        L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+
+
+        var googleLayer = L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        });
+
+
+        var openStreetMapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        });
+
+
+    var overlayMaps = {
+    "OpenStreetMap": openStreetMapLayer,
+    "Google": googleLayer,
+
+};
+
+L.control.layers(null, overlayMaps).addTo(map);
+
+
+
+
+
+</script>
+
+
+
+{% endblock %}
