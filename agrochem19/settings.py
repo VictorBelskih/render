@@ -139,7 +139,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # Замените 'your_app' на название вашего Django-приложения
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
 MEDIA_URL = '/media/'
