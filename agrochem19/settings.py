@@ -135,9 +135,9 @@ STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Замените 'your_app' на название вашего Django-приложения
-]
+#STATICFILES_DIRS = [
+    #os.path.join(BASE_DIR, 'static'),  # Замените 'your_app' на название вашего Django-приложения
+#]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
@@ -149,4 +149,4 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CKEDITOR_UPLOAD_PATH = "static/uploads/"
+CKEDITOR_UPLOAD_PATH = "/uploads/"
