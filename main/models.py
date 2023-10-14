@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 import os
 class News(models.Model):
     news_title = models.CharField(max_length=200)
-    news_img = models.ImageField(upload_to='media/static/AgroChemical/image/')
+    news_img = models.ImageField(upload_to='/image')
     news_text = models.TextField()
     news_date = models.DateTimeField("date published")
 
@@ -17,7 +17,7 @@ class News(models.Model):
 
 class Slides(models.Model):
     title = models.CharField(max_length=200)
-    img = models.ImageField(upload_to='media/static/AgroChemical/image/')
+    img = models.ImageField(upload_to='/image')
     text = models.TextField()
 
 
