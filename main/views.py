@@ -39,11 +39,11 @@ def analyswater(request):
     return render(request, 'AgroChemical/analyswater.html', {'article': article})
 
 def analysudob(request):
-    article = Articles.objects.filter(category='5')
+    article = Articles.objects.filter(category='4')
     return render(request, 'AgroChemical/analysudob.html', {'article': article})
 
 def analyskorm(request):
-    article = Articles.objects.filter(category='4')
+    article = Articles.objects.filter(category='5')
     return render(request, 'AgroChemical/analyskorm.html', {'article': article})
 
 def gis(request):
