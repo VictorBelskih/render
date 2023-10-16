@@ -20,6 +20,7 @@ urlpatterns = [
     path("acredits", views.acredits, name="acredits"),
     path("isdania", views.isdania, name="isdania"),
     path("news", views.news, name="news"),
+    path("media", views.media, name="media"),
 ]
 
 # Create your views here.
