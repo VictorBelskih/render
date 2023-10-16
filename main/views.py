@@ -64,7 +64,7 @@ def servicezone(request):
 def docs(request):
     article = Articles.objects.filter(category='10')
     return render(request, 'AgroChemical/docs.html',{'article': article})
-def useudbo(request):
+def useudob(request):
     article = Articles.objects.filter(category='11')
     return render(request, 'AgroChemical/useudob.html',{'article': article})
 def ecomonitoring(request):
