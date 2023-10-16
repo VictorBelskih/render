@@ -13,6 +13,10 @@ urlpatterns = [
     path("gis", views.gis, name="gis"),
     path("securityplant", views.securityplant, name="securityplant"),
     path("monitoring", views.monitoring, name="monitoring"),
+    path("servicezone", views.servicezone, name="servicezone"),
+    path("docs", views.docs, name="docs"),
+    path("useudob", views.useudob, name="useudob"),
+    path("ecomonitoring", views.ecomonitoring, name="ecomonitoring"),
 ]
 
 # Create your views here.

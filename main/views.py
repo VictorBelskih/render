@@ -58,3 +58,15 @@ def securityplant(request):
 def monitoring(request):
     article = Articles.objects.filter(category='8')
     return render(request, 'AgroChemical/monitoring.html',{'article': article})
+def servicezone(request):
+    article = Articles.objects.filter(category='9')
+    return render(request, 'AgroChemical/servicezone.html',{'article': article})
+def docs(request):
+    article = Articles.objects.filter(category='10')
+    return render(request, 'AgroChemical/docs.html',{'article': article})
+def useudbo(request):
+    article = Articles.objects.filter(category='11')
+    return render(request, 'AgroChemical/useudob.html',{'article': article})
+def ecomonitoring(request):
+    article = Articles.objects.filter(category='12')
+    return render(request, 'AgroChemical/ecomonitoring.html',{'article': article})
