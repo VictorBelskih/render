@@ -183,3 +183,9 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 CKEDITOR_UPLOAD_PATH = f'https://{AWS_S3_CUSTOM_DOMAIN}/ckeditor/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

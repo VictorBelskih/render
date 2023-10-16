@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import News, Slides,Articles
 from django.core.mail import send_mail
 from .forms import FeedbackForm
+from django.conf import settings
+
 
 def index(request):
     news = News.objects.order_by('-id')[:6]
@@ -16,8 +18,8 @@ def index(request):
             send_mail(
                 'Обратная связь',
                 f'Имя: {name}\nEmail: {email}\nСообщение: {message}',
-                'your_email@example.com',  # Замените на вашу почту
-                ['recipient@example.com'],  # Замените на адрес получателя
+                settings.EMAIL_HOST_USER,
+                ['belskih15@gmail.com'],  # Замените на адрес получателя
             )
             return render(request, 'AgroChemical/success.html')
     else:
