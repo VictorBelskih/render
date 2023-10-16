@@ -70,3 +70,15 @@ def useudob(request):
 def ecomonitoring(request):
     article = Articles.objects.filter(category='12')
     return render(request, 'AgroChemical/ecomonitoring.html',{'article': article})
+def news(request):
+    article = Articles.objects.filter(category='13')
+    return render(request, 'AgroChemical/news.html',{'article': article})
+def media(request):
+    article = Articles.objects.filter(category='14')
+    return render(request, 'AgroChemical/media.html',{'article': article})
+def acredits(request):
+    article = Articles.objects.filter(category='15')
+    return render(request, 'AgroChemical/acredits.html',{'article': article})
+def articles(request):
+    article = Articles.objects.filter(category='16')
+    return render(request, 'AgroChemical/articles.html',{'article': article})

@@ -39,9 +39,9 @@
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{% url 'monitoring' %}">Государственный мониторинг<br>плодородия почв</a></li>
-                            <li><a class="dropdown-item" href="#">Использование земель</a></li>
-                            <li><a class="dropdown-item" href="#">Использование удобрений</a>
-                            </li><li><a class="dropdown-item" href="#">Экологический мониторинг</a></li>
+                            <li><a class="dropdown-item" href="{% url 'servicezone' %}">Использование земель</a></li>
+                            <li><a class="dropdown-item" href="{% url 'useudob' %}">Использование удобрений</a>
+                            </li><li><a class="dropdown-item" href="{% url 'ecomonitoring' %}">Экологический мониторинг</a></li>
                           </ul>
                         </li>
 
@@ -50,7 +50,7 @@
                             Услуги
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Документы</a></li>
+                            <li><a class="dropdown-item" href="{% url 'docs' %}">Документы</a></li>
                             <li><a class="dropdown-item" href="{% url 'analyspojv' %}">Анализ почвы</a></li>
                             <li><a class="dropdown-item" href="{% url 'analyswater' %}">Анализ воды</a></li>
                             <li><a class="dropdown-item" href="{% url 'analysudob' %}">Анализ удобрений</a></li>
@@ -58,7 +58,7 @@
                             <li><a class="dropdown-item" href="{% url 'securityplant' %}">Безопасность продукции<br> растеневодства</a></li>
                             <li><a class="dropdown-item" href="{% url 'gis' %}">ГИС технологии</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Аккредитация</a></li>
+                            <li><a class="dropdown-item" href="{% url 'acredits' %}">Аккредитация</a></li>
                           </ul>
                         </li>
 
@@ -67,10 +67,11 @@
                             Публикации
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Издания</a></li>
-                            <li><a class="dropdown-item" href="#">Статьи</a></li>
+                            <li><a class="dropdown-item" href="isdania">Издания</a></li>
+                            <li><a class="dropdown-item" href="articles">Статьи</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Медиа</a></li>
+                            <li><a class="dropdown-item" href="media">Медиа</a></li>
+                            <li><a class="dropdown-item" href="news">Новости</a></li>
                           </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
