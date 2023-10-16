@@ -17,6 +17,9 @@ urlpatterns = [
     path("docs", views.docs, name="docs"),
     path("useudob", views.useudob, name="useudob"),
     path("ecomonitoring", views.ecomonitoring, name="ecomonitoring"),
+    path("acredits", views.acredits, name="acredits"),
+    path("isdania", views.isdania, name="isdania"),
+    path("news", views.news, name="news"),
 ]
 
 # Create your views here.

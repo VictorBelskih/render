@@ -82,3 +82,6 @@ def acredits(request):
 def articles(request):
     article = Articles.objects.filter(category='16')
     return render(request, 'AgroChemical/articles.html',{'article': article})
+def isdania(request):
+    article = Articles.objects.filter(category='17')
+    return render(request, 'AgroChemical/isdania.html',{'article': article})
