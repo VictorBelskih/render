@@ -21,6 +21,7 @@ urlpatterns = [
     path("isdania", views.isdania, name="isdania"),
     path("news", views.news, name="news"),
     path("media", views.media, name="media"),
+    path("articles", views.articles, name="articles"),
 ]
 
 # Create your views here.

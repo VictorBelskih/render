@@ -67,11 +67,11 @@
                             Публикации
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="isdania">Издания</a></li>
-                            <li><a class="dropdown-item" href="articles">Статьи</a></li>
+                            <li><a class="dropdown-item" href="{% url 'isdania' %}">Издания</a></li>
+                            <li><a class="dropdown-item" href="{% url 'articles' %}">Статьи</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="media">Медиа</a></li>
-                            <li><a class="dropdown-item" href="news">Новости</a></li>
+                            <li><a class="dropdown-item" href="{% url 'media' %}">Медиа</a></li>
+                            <li><a class="dropdown-item" href="{% url 'news' %}">Новости</a></li>
                           </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
