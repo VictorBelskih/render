@@ -10888,7 +10888,7 @@ margin:19px!important;
 @media (width>0px) and (width<767px) {
 
     .banner {
-        height:200px!important;
+        height:150px!important;
     }
     .carousel{
 
@@ -11211,4 +11211,14 @@ textarea.input100 {
 
 .contact100-more-highlight {
     color: #bd59d4;
+}
+.foot  {
+    float:left;
+    color:#fff!important;
+}
+.footer-desc {
+    color:#fff!important;
+}
+.copyright {
+    color:#fff!important;
 }

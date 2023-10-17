@@ -5,13 +5,23 @@
 
             <div class="row gx-4 gx-lg-5">
                 <div class="container px-4 px-lg-5 about">
+                    <h1>Новости</h1>
+                    <div class="row gx-4 gx-lg-5">
+                    {% for item in news %}
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
 
-                        {% for art in article %}
-
-                            <center><h1>{{ art.title }}</h1></center>
-                            <p>{{ art.text|safe}}</p>
-
-                        {% endfor %}
+                                    <img src="{{ item.news_img.url }}" class="d-block w-100 card-img" alt="{{ item.news_title }}">
+                                    <h2 class="card-title">{{ item.news_title }}</h2>
+                                    <p class="card-text">{{ item.news_text |slice:":255" |safe  }}</p>
+                                    <p class="card-text">Опубликовано: {{ item.news_date }}</p> <!-- Добавлено поле дата публикации -->
+                                </div>
+                                <div class="card-footer"><a class="btn btn-primary btn-sm" href="/new/{{ item.id }}">Подробнее</a></div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
                 </div>
             </div>
 {% endblock %}

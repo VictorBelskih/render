@@ -19,6 +19,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" rel="stylesheet">
+        <link rel="shortcut icon" href="http://sstatic.net/so/favicon.ico">
     </head>
     <body>
     <div class="container c-nav px-4 px-lg-5">
@@ -112,8 +113,93 @@
 
 
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <footer class="footer-dark bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-3 col-lg-4 col-md-6 ">
+                <div class="foot">
+                  <h3>ФГБУ ГСАС ХАКАССКАЯ</h3>
+
+
+                      <ul class="list-unstyled">
+                        <li>
+                          <p>Адрес: 655017, Республика Xакасия, г. Абакан, ул. Хакасская 25</p>
+                        </li>
+                        <li>
+                          <p>E-mail: agrohim_19@mail.ru</p>
+                        </li>
+                        <li>
+                          <p>Испытательная лаборатория:</p>
+                          <p>8(3902)34-35-06, Шулбаева Алена Александровна, agrohim_19-2@mail.ru</p>
+                        </li>
+
+                      </ul>
+                    </div>
+              </div>
+              <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
+                <div class="foot">
+
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="{% url 'index' %}" class="text-decoration-none">Главная</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'about' %}" class="text-decoration-none">О нас</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'docs' %}" class="text-decoration-none">Документы</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'news' %}" class="text-decoration-none">Новости</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="foot">
+
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="{% url 'analyspojv' %}" class="text-decoration-none">Анализ почв</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'analyswater' %}" class="text-decoration-none">Анализ воды</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'analysudob' %}" class="text-decoration-none">Анализ удобрений</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'analyskorm' %}" class="text-decoration-none">Анализ кормов</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="foot">
+
+                  <ul class="list-unstyled">
+
+                    <li>
+                      <p>Директор: 8(3902)34-35-08, Капсаргин Алексей Иосифович</p>
+
+                      <p>Бухгалтерия: 8(3902)34-35-09</p>
+
+                    </li>
+                     <li>
+                          <p>Отдел агроэкологического мониторинга плодородия почв:</p>
+                          <p>8(3902)34-35-07, Елизарьев Владимир Владимирович, agrohim_19-3@mail.ru</p>
+                     </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+
+              <div class="copyright">
+                <p>Developed and maintained 2023</p>
+              </div>
+            </div>
+          </div>
         </footer>
     </div>
         <!-- Bootstrap core JS-->

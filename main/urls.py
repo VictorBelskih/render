@@ -22,6 +22,7 @@ urlpatterns = [
     path("news", views.news, name="news"),
     path("media", views.media, name="media"),
     path("articles", views.articles, name="articles"),
+    path('new/<int:id>/', views.new, name='new')
 ]
 
 # Create your views here.

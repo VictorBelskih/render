@@ -3,14 +3,15 @@
 {% load static %}
 {% block content %}
 
-            <div class="row gx-4 gx-lg-5">
-            <div class="container px-4 px-lg-5 about">
-                {% for art in article %}
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        {% for art in article %}
 
-                   <center><h1>{{ art.title }}</h1></center>
-                   <p>{{ art.text|safe}}</p>
+                           <center><h1>{{ art.title }}</h1></center>
+                           <p>{{ art.text|safe}}</p>
+                           </div>
+                       {% endfor %}
 
-               {% endfor %}
-            </div>
+                </div>
             </div>
 {% endblock %}

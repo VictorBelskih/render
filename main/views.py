@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import News, Slides,Articles
 from django.core.mail import send_mail
 from .forms import FeedbackForm
@@ -71,8 +71,10 @@ def ecomonitoring(request):
     article = Articles.objects.filter(category='12')
     return render(request, 'AgroChemical/ecomonitoring.html',{'article': article})
 def news(request):
+    news = News.objects.order_by('-id')
     article = Articles.objects.filter(category='13')
-    return render(request, 'AgroChemical/news.html',{'article': article})
+    context = {'news': news}
+    return render(request, 'AgroChemical/news.html', context)
 def media(request):
     article = Articles.objects.filter(category='14')
     return render(request, 'AgroChemical/media.html',{'article': article})
@@ -85,3 +87,6 @@ def articles(request):
 def isdania(request):
     article = Articles.objects.filter(category='17')
     return render(request, 'AgroChemical/isdania.html',{'article': article})
+def new(request, id):
+    new_desrcription = get_object_or_404(News, id=id)
+    return render(request, 'AgroChemical/new.html', {'new_desrcription': new_desrcription})

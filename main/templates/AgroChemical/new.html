@@ -1,0 +1,27 @@
+{% extends 'AgroChemical/layout.html' %}
+{% block title %} Новости {% endblock %}
+{% load static %}
+{% block content %}
+
+            <div class="row gx-4 gx-lg-5">
+                <div class="container px-4 px-lg-5 about">
+
+                    <div class="row gx-4 gx-lg-5">
+                    {% if new_desrcription  %}
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h1 class="card-title">{{ new_desrcription.news_title }}</h1>
+                                    <p class="card-text">Опубликовано: {{ new_desrcription.news_date }}</p> <!-- Добавлено поле дата публикации -->
+                                    <img src="{{new_desrcription.news_img.url }}" class="img-fluid" alt="{{ item.news_title }}">
+
+                                    <p class="card-text">{{ new_desrcription.news_text |safe  }}</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+{% endblock %}

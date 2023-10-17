@@ -10914,6 +10914,7 @@ margin:19px!important;
 
 
 }
+
 .container-contact100 {
     width: 100%;
     min-height: 100vh;
@@ -11211,4 +11212,8 @@ textarea.input100 {
 
 .contact100-more-highlight {
     color: #bd59d4;
+}
+
+.footer-desc {
+    color:#fff!important;
 }

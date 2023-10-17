@@ -12,11 +12,18 @@ class ArticlesAdminForm(forms.ModelForm):
     class Meta:
         model = Articles
         fields = '__all__'
-
+class NewsAdminForm(forms.ModelForm):
+    news_text = forms.CharField(widget=CKEditorUploadingWidget())
+    class Meta:
+        model = News
+        fields = '__all__'
 class ArticlesAdmin(admin.ModelAdmin):
     form = ArticlesAdminForm
 
-admin.site.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    form = NewsAdminForm
+
+admin.site.register(News,NewsAdmin)
 admin.site.register(Slides)
 admin.site.register(Articles,ArticlesAdmin)
 admin.site.register(Articles_category)
