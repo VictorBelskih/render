@@ -10867,7 +10867,7 @@ background:#fff;
 background:#fff;
 }
 .card-img {
-height:280px;
+height:200px;
 }
 .about {
 text-align:left;
@@ -10888,9 +10888,9 @@ margin:19px!important;
 @media (width>0px) and (width<767px) {
 
     .banner {
-        height:150px!important;
+        height:0px!important;
     }
-    .carousel{
+    .corusel {
 
         visibility: hidden;
         display: none;
@@ -10905,11 +10905,11 @@ margin:19px!important;
 
     }
 
-}
-@media (width>768px) and (width<991px) {
-
 
 }
+
+
+
 @media (width>992px) and (width<1219px) {
 
 
