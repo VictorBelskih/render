@@ -10885,18 +10885,7 @@ margin-top:40px;
 margin:19px!important;
 }
 
-@media (width>0px) and (width<767px) {
 
-    .banner {
-        height:0px!important;
-    }
-    .corusel {
-
-        visibility: hidden;
-        display: none;
-
-    }
-}
 @media (width>768px) and (width<991px) {
 
     .courusel-img {
@@ -11105,11 +11094,25 @@ textarea.input100 {
     .wrap-contact100 {
         padding: 72px 50px 25px 50px;
     }
+     .banner {
+        height:0px!important;
+    }
+    .corusel {
+        visibility: hidden;
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
     .wrap-contact100 {
         padding: 72px 15px 25px 15px;
+    }
+    .banner {
+        height:0px!important;
+    }
+    .corusel {
+        visibility: hidden;
+        display: none;
     }
 }
 
