@@ -144,7 +144,7 @@ if not DEBUG:
     # in your application directory on Render.
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 
 #STATICFILES_DIRS = [
     #os.path.join(BASE_DIR, 'static'),  # Замените 'your_app' на название вашего Django-приложения
@@ -171,17 +171,13 @@ AWS_QUERYSTRING_AUTH = False
 AWS_HEADERS = {
     'Access-Control-Allow-Origin': '*',
 }
-if DEBUG:
-    STATIC_URL = '/static/'
-    MEDIA_URL = '/media/'
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-else:
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
