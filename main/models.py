@@ -61,6 +61,17 @@ class District(models.Model):
         verbose_name = 'Район',
         verbose_name_plural = 'Районы'
 
+class Farm(models.Model):
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    district = models.ForeignKey(District, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Хозяйство',
+        verbose_name_plural = 'Хозяйства'
+
 
 
 
