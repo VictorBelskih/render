@@ -55,6 +55,9 @@ class District(models.Model):
     districtCode = models.IntegerField(50)
     districtName = models.CharField(200)
 
+    class Meta:
+        verbose_name = 'Район',
+        verbose_name_plural = 'Районы'
     def __str__(self):
         return self.districtName
 
