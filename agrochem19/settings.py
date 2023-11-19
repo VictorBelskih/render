@@ -145,14 +145,6 @@ if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-
-#STATICFILES_DIRS = [
-    #os.path.join(BASE_DIR, 'static'),  # Замените 'your_app' на название вашего Django-приложения
-#]
-
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
