@@ -51,7 +51,15 @@ class Articles_category(models.Model):
         verbose_name = 'Категория',
         verbose_name_plural = 'Категории'
 
+class District(models.Model):
+    name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Район',
+        verbose_name_plural = 'Районы'
 
 
 
