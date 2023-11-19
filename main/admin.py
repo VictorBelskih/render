@@ -25,6 +25,7 @@ class NewsAdmin(admin.ModelAdmin):
 
 admin.site.register(News,NewsAdmin)
 admin.site.register(Slides)
+admin.site.register(District)
 admin.site.register(Articles,ArticlesAdmin)
 admin.site.register(Articles_category)
 
