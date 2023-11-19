@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-
+from django.contrib.auth.models import User
 import os
 class News(models.Model):
     news_title = models.CharField(max_length=200)
@@ -60,7 +60,16 @@ class District(models.Model):
     class Meta:
         verbose_name = 'Район',
         verbose_name_plural = 'Районы'
+class Farm(models.Model):
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Хозяйство',
+        verbose_name_plural = 'Хозяйства'
 
 
 

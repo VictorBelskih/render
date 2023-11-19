@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from .models import News, Slides, Articles, Articles_category, District
+from .models import News, Slides, Articles, Articles_category, District,Farm
 from ckeditor.widgets import CKEditorWidget
 # Register your models here.
 
@@ -26,6 +26,7 @@ class NewsAdmin(admin.ModelAdmin):
 admin.site.register(News,NewsAdmin)
 admin.site.register(Slides)
 admin.site.register(District)
+admin.site.register(Farm)
 admin.site.register(Articles, ArticlesAdmin)
 admin.site.register(Articles_category)
 
