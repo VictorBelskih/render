@@ -72,6 +72,27 @@ class Farm(models.Model):
         verbose_name = 'Хозяйство',
         verbose_name_plural = 'Хозяйства'
 
+class TLU(models.Model):
+    name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Тип поля',
+        verbose_name_plural = 'Тип полей'
+class Field(models.Model):
+    fid = models.IntegerField()
+    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
+    area = models.FloatField()
+    tlu = models.ForeignKey(TLU, on_delete=models.CASCADE)
+    GEOM = models.TextField()
+
+    def __str__(self):
+        return self.farm
+
+    class Meta:
+        verbose_name = 'Поля',
+        verbose_name_plural = 'Поля'
 
 
 
