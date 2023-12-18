@@ -1,5 +1,7 @@
 {% load static %}
 
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" class="h-100">
     <head>
@@ -8,9 +10,10 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>{% block title %} {% endblock %}</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'AgroChemical/css/styles.css'%}" rel="stylesheet" />
-        <link href="{% static 'AgroChemical/css/contact.css'%}" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +24,8 @@
 
     </head>
     <body>
-    <div class="container c-nav px-4 px-lg-5 back">
-        <img src="{% static 'AgroChemical/img/banner1.jpg' %}" alt="1" class="d-block w-100 banner">
+    <div class="container-fluid c-nav px-4 px-lg-5">
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5 ">
 
@@ -38,10 +41,10 @@
                             Деятельность
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'monitoring' %}">Государственный мониторинг<br>плодородия почв</a></li>
-                            <li><a class="dropdown-item" href="{% url 'servicezone' %}">Использование земель</a></li>
-                            <li><a class="dropdown-item" href="{% url 'useudob' %}">Использование удобрений</a>
-                            </li><li><a class="dropdown-item" href="{% url 'ecomonitoring' %}">Экологический мониторинг</a></li>
+                            <li><a class="dropdown-item" href="#">Государственный мониторинг<br>плодородия почв</a></li>
+                            <li><a class="dropdown-item" href="#">Использование земель</a></li>
+                            <li><a class="dropdown-item" href="#">Использование удобрений</a>
+                            </li><li><a class="dropdown-item" href="#">Экологический мониторинг</a></li>
                           </ul>
                         </li>
 
@@ -50,7 +53,7 @@
                             Услуги
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'docs' %}">Документы</a></li>
+                            <li><a class="dropdown-item" href="#">Документы</a></li>
                             <li><a class="dropdown-item" href="{% url 'analyspojv' %}">Анализ почвы</a></li>
                             <li><a class="dropdown-item" href="{% url 'analyswater' %}">Анализ воды</a></li>
                             <li><a class="dropdown-item" href="{% url 'analysudob' %}">Анализ удобрений</a></li>
@@ -58,7 +61,7 @@
                             <li><a class="dropdown-item" href="{% url 'securityplant' %}">Безопасность продукции<br> растеневодства</a></li>
                             <li><a class="dropdown-item" href="{% url 'gis' %}">ГИС технологии</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{% url 'acredits' %}">Аккредитация</a></li>
+                            <li><a class="dropdown-item" href="#">Аккредитация</a></li>
                           </ul>
                         </li>
 
@@ -67,15 +70,13 @@
                             Публикации
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'isdania' %}">Издания</a></li>
-                            <li><a class="dropdown-item" href="{% url 'articles' %}">Статьи</a></li>
+                            <li><a class="dropdown-item" href="#">Издания</a></li>
+                            <li><a class="dropdown-item" href="#">Статьи</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{% url 'media' %}">Медиа</a></li>
-                            <li><a class="dropdown-item" href="{% url 'news' %}">Новости</a></li>
+                            <li><a class="dropdown-item" href="#">Медиа</a></li>
                           </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
-
                         {% if user.is_authenticated %}
 
                         <li class="nav-item dropdown">
@@ -85,9 +86,7 @@
                           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <li><a class="dropdown-item" href="{% url 'account' %}">Аккаунт</a></li>
-
-                            <li><a class="dropdown-item" href="/admin/">Панель Администратора</a></li>
-
+                            <li><a class="dropdown-item" href="{% url 'gis_x' %}">GisX</a></li>
                             <li><a class="dropdown-item" href="{% url 'logout' %}">Выход</a></li>
 
                           </ul>
@@ -100,7 +99,6 @@
                             <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Регистрация</a></li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'signin' %}">Войти</a></li>
                         {% endif %}
-
                     </ul>
                 </div>
             </div>
@@ -112,96 +110,16 @@
 
 
         <!-- Footer-->
-        <footer class="footer-dark bg-dark">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-3 col-lg-4 col-md-6 ">
-                <div class="foot">
-                  <h3>ФГБУ ГСАС ХАКАССКАЯ</h3>
-
-
-                      <ul class="list-unstyled">
-                        <li>
-                          <p>Адрес: 655017, Республика Xакасия, г. Абакан, ул. Хакасская 25</p>
-                        </li>
-                        <li>
-                          <p>E-mail: agrohim_19@mail.ru</p>
-                        </li>
-                        <li>
-                          <p>Испытательная лаборатория:</p>
-                          <p>8(3902)34-35-06, Шулбаева Алена Александровна, agrohim_19-2@mail.ru</p>
-                        </li>
-
-                      </ul>
-                    </div>
-              </div>
-              <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
-                <div class="foot">
-
-                  <ul class="list-unstyled">
-                    <li>
-                      <a href="{% url 'index' %}" class="text-decoration-none">Главная</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'about' %}" class="text-decoration-none">О нас</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'docs' %}" class="text-decoration-none">Документы</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'news' %}" class="text-decoration-none">Новости</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6">
-                <div class="foot">
-
-                  <ul class="list-unstyled">
-                    <li>
-                      <a href="{% url 'analyspojv' %}" class="text-decoration-none">Анализ почв</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'analyswater' %}" class="text-decoration-none">Анализ воды</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'analysudob' %}" class="text-decoration-none">Анализ удобрений</a>
-                    </li>
-                    <li>
-                      <a href="{% url 'analyskorm' %}" class="text-decoration-none">Анализ кормов</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-xl-3 col-lg-3 col-md-6">
-                <div class="foot">
-
-                  <ul class="list-unstyled">
-
-                    <li>
-                      <p>Директор: 8(3902)34-35-08, Капсаргин Алексей Иосифович</p>
-
-                      <p>Бухгалтерия: 8(3902)34-35-09</p>
-
-                    </li>
-                     <li>
-                          <p>Отдел агроэкологического мониторинга плодородия почв:</p>
-                          <p>8(3902)34-35-07, Елизарьев Владимир Владимирович, agrohim_19-3@mail.ru</p>
-                     </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="d-flex justify-content-center">
-
-              <div class="copyright">
-                <p>Developed and maintained 2023</p>
-              </div>
-            </div>
-          </div>
+        <footer class="py-5 bg-dark">
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
         </footer>
     </div>
+        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'gis_x/assets/js/scripts.js' %}"></script>
+        <script src="{% static 'gis_x/assets/js/code.jquery.com_jquery-3.7.1.min.js' %}"></script>
+
     </body>
+
 </html>
